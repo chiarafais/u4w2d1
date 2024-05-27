@@ -19,7 +19,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        while(num !=0) {
+        while(num != 0) {
             try{
                 System.out.println("Inserisci un numero da 1 a 10 (inserisci 0 se invece vuoi interrompere)");
                 num = scanner.nextInt();
@@ -38,8 +38,9 @@ public class Main {
                     System.out.println( "Il tuo array modificato: " + Arrays.toString(numArray));
                 }
 
-            } catch (InputMismatchException | NumberFormatException err) {
-                System.out.println("Inserisci un numero!");
+            } catch (InputMismatchException | NumberFormatException ex) {
+                System.out.println("Non hai inserito un numero!");
+                break;
             }
         }
         scanner.close();

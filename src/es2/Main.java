@@ -26,6 +26,7 @@ public class Main {
 
         } catch (ArithmeticException | IllegalArgumentException ex) {
             System.out.println("Non è possibile dividere per zero");
+
     }
 
 

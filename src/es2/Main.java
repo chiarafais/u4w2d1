@@ -16,6 +16,7 @@ public class Main {
             //calcolo per ottenere la divisione kilometro - litro
             int result = km / litri;
 
+            
             System.out.println("Hai consumato " + result + " km/lt");
 
         } catch (ArithmeticException err) {

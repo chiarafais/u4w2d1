@@ -8,23 +8,26 @@ public class Main {
 
         try {
             System.out.println("Inserisci i km che hai percorso");
-            int km = Integer.parseInt(scanner.nextLine());
+            double km = Double.parseDouble((scanner.nextLine()));
 
-            System.out.println("Inserisci i litri di carburante che hai consumato in " + km + "km");
-            int litri = Integer.parseInt(scanner.nextLine());
+            System.out.println("Inserisci i litri di carburante che hai consumato in " + km + " km");
+            double litri = Double.parseDouble((scanner.nextLine()));
+            if (litri == 0){
+                throw new ArithmeticException("impossibile dividere per 0");
+            }
 
             //calcolo per ottenere la divisione kilometro - litro
-            int result = km / litri;
+            double result = km / litri;
 
-            
             System.out.println("Hai consumato " + result + " km/lt");
 
-        } catch (ArithmeticException err) {
-            System.out.println("Non è possibile dividere per zero");
-
-        } catch (NumberFormatException err) {
+        } catch (NumberFormatException ex) {
             System.out.println("Non hai inserito un numero o un valore corretto");
-        }
+
+        } catch (ArithmeticException | IllegalArgumentException ex) {
+            System.out.println("Non è possibile dividere per zero");
+    }
+
 
         scanner.close();
     }
